@@ -26,4 +26,8 @@ class UsersController < ApplicationController
     render(:edit) && return unless @user.update_attributes(params[:user])
     redirect_to user_path(@user)
   end
+
+  def search
+    render json: User.search(params[:query], fields: [{name: :text_start}], limit: 10).map(&:name)
+  end
 end

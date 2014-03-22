@@ -8,6 +8,7 @@ gem 'rails', '3.2.14'
 gem 'pg'
 gem 'pry'
 gem 'omniauth-facebook'
+gem 'searchkick'
 
 group :development, :test do
   gem 'rspec'
