@@ -8,7 +8,7 @@ gem 'rails', '3.2.14'
 gem 'pg'
 gem 'pry'
 gem 'omniauth-facebook'
-gem 'searchkick'
+gem 'rails3-jquery-autocomplete', git: 'https://github.com/francisd/rails3-jquery-autocomplete'
 
 group :development, :test do
   gem 'rspec'

@@ -57,7 +57,11 @@ Betterbet::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   root to: 'dashboard#index'
-  get 'users/search'
+  get 'dashboard/index'
+
+  resources :users do
+    get :autocomplete_name, :on => :collection
+  end
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'

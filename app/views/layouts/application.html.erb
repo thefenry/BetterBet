@@ -4,12 +4,10 @@
   <title>Betterbet</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "autocomplete-rails.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-  <script src="jquery.js"></script>
-  <script src="typeahead.js"></script>
+  <%= yield %>
 </body>
 </html>

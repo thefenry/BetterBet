@@ -1,0 +1,12 @@
+<%= form_for @user do |f| %>
+  <%= f.autocomplete_field :name, autocomplete_name_users_path %>
+<% end %>
+
+<script>
+//   $(document).on('ready', function() {
+//      $("#query").typeahead({
+//         name: "user",
+//         remote: "/users/search?query=%QUERY"
+//       });
+//    });
+// </script>

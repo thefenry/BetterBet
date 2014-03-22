@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_secure_password
+  #has_secure_password
   attr_accessible :email, :name, :password, :password_confirmation, :bio, :image
   has_many :goals, foreign_key: "owner_id"
   has_many :friendships
@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
   has_many :inverse_friends, :through => :inverse_friendships, :source => :user
   validates_presence_of :name, :email, :password_digest
-  searchkick
 
   def all_friends
     self.friends + self.inverse_friends

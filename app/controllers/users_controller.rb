@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  autocomplete :name
+
   def new
     @user = User.new
   end
@@ -28,6 +30,7 @@ class UsersController < ApplicationController
   end
 
   def search
+    User.reindex
     render json: User.search(params[:query], fields: [{name: :text_start}], limit: 10).map(&:name)
   end
 end
