@@ -6,8 +6,8 @@
         <li class="goal_edit-button">
           <%= link_to image_tag('pencil.svg'), edit_goal_path(goal) %>
         </li>
-        <li>
-          <%= link_to image_tag('times.svg'), class: "goal_delete-button", data: {goal: goal.id, user: current_user.id} %>
+        <li class="goal_delete-button">
+          <%= link_to image_tag('times.svg'), data: {goal: goal.id, user: current_user.id} %>
         </li>
       </ul>
     <% end %>
