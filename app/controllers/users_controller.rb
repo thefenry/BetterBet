@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     redirect_to new_user_path and return unless @user.save
 
-    session[:user_id] = @user.id
+    login(@user)
     UserMailer.welcome_email(@user).deliver
 
     customer = Customer.create(@user, params[:stripeToken])
@@ -44,11 +44,6 @@ class UsersController < ApplicationController
     session.clear
     @user.destroy
     redirect_to login_path
-  end
-
-  def search
-    user = User.find_by_name(params[:user])
-    render :json => user
   end
 
   private
