@@ -42,7 +42,9 @@
         @include span-columns(3);
     }
     @include span-columns(4);
+    height: auto;
     overflow: hidden;
+    margin: $base-line-height em(16);
 }
 
 .user_profile_img {
