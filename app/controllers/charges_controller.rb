@@ -14,6 +14,5 @@ class ChargesController < ApplicationController
 
     flash[:notice] = "Money successfully transferred!"
     redirect_to root_path
-
   end
 end
