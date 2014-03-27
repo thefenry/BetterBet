@@ -4,12 +4,12 @@ class FriendshipsController < ApplicationController
   def create
     current_user.friends << @friend
     UserMailer.new_friend(current_user, User.find(params[:friend_id])).deliver
-    render :nothing => true, :status => 200
+    render :nothing => true, :status => :ok
   end
 
   def destroy
     current_user.friends.delete(@friend)
-    render :nothing => true, :status => 200
+    render :nothing => true, :status => :ok
   end
 
   private
