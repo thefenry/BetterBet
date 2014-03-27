@@ -1,5 +1,5 @@
 class FriendshipsController < ApplicationController
-  before_filter :friend
+  before_filter :load_friend
 
   def create
     current_user.friends << @friend
@@ -14,7 +14,7 @@ class FriendshipsController < ApplicationController
 
   private
 
-  def friend
+  def load_friend
     @friend = User.find(params[:friend_id])
   end
 end
