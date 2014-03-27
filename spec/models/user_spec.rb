@@ -17,7 +17,7 @@ describe User do
   end
 
   context "#omniauth" do
-    it "should successfully save user with information" 
+    it "should successfully save user with information"
   end
 
   context "#has_friends?" do
